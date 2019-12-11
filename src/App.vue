@@ -22,5 +22,16 @@
 </script>
 
 <style>
+	@font-face {
+		font-family: "Suisse Intl";
+		src: local("Suisse Intl"),
+		url(/assets/fonts/SuisseIntl.woff2) format('woff2'),
+		url(/assets/fonts/SuisseIntl.woff) format('woff');
+	}
 
+	@font-face {
+		font-family: "Suisse Intl - Semi Bold";
+		src: url(/assets/fonts/SuisseIntl-SemiBold.woff2) format('woff2'),
+		url(/assets/fonts/SuisseIntl-SemiBold.woff) format('woff');
+	}
 </style>
