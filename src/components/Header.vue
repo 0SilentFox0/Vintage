@@ -14,7 +14,7 @@
             <p class="header__subtitle-green-text">GMS</p>
             Headquarters
           </div>
-          <div class="d-flex">
+          <div class="d-flex flex-column flex-md-row">
             <div class="d-flex flex-column">
               <div class="header__text">
                 Global Message Services Ukraine LLC Bundesstrasse 5 | 3rd Floor<br>

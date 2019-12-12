@@ -1,6 +1,6 @@
 <template>
   <div>
-    <gmap-map :center="center" :zoom="12" style="width:100%;  height: 400px;">
+    <gmap-map :center="center" :zoom="12" style="width:100%;  height: 600px;">
       <gmap-marker
         :key="index"
         v-for="(m, index) in markers"
@@ -16,7 +16,7 @@ export default {
   name: "GoogleMap",
   data() {
     return {
-      center: { lat: 45.508, lng: -73.587 },
+      center: { lat: 50.45466, lng: 30.5238},
       markers: [],
       places: [],
       currentPlace: null
@@ -55,3 +55,7 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+
+</style>

@@ -11,8 +11,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="row">
-              <div class="col">
+              <div class="col-flex-column col-lg-flex-row">
                 <ul class="nav">
                   <li class="nav-item">
                     <a class="nav-link active" href="#">Kyiv</a>
@@ -27,7 +26,6 @@
                     <a class="nav-link" href="#">Barcelona</a>
                   </li>
                 </ul>
-              </div>
             </div>
           </div>
           <div class="row">
@@ -96,7 +94,7 @@ export default {
   font-family: "Suisse Intl", sans-serif;
   font-size: 26px;
   font-weight: 300;
-  line-height: 20px;
+  line-height: 25px;
   letter-spacing: 1.18px;
   margin-bottom: 50px;
 }
@@ -105,7 +103,8 @@ export default {
   font-family: "Myriad Pro", sans-serif;
   font-size: 11px;
   font-weight: 400;
-  line-height: 5px;
+  line-height: 10px;
   letter-spacing: 0.5px;
 }
+
 </style>
