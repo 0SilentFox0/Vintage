@@ -1,6 +1,12 @@
 <template>
   <div>
-    <gmap-map :center="center" :zoom="12" style="width:100%;  height: 600px;">
+    <gmap-map
+      :center="center"
+      :zoom="12"
+      style="width: 100%; height: 100%"
+      :options="{styles: styles}"
+      map-type-id="terrain"
+    >
       <gmap-marker
         :key="index"
         v-for="(m, index) in markers"
@@ -12,11 +18,20 @@
 </template>
 
 <script>
+import json from "../assets/googleMapStyle";
 export default {
   name: "GoogleMap",
   data() {
     return {
-      center: { lat: 50.45466, lng: 30.5238},
+      styles: [json],
+      center: { lat: 50.45466, lng: 30.5238 },
+      // center: [{
+      //   Kyiv: {lat: 50.45466, lng: 30.5238},
+      //   NewYork: { lat: 40.730610, lng: -73.935242},
+      //   Guangzhou: { lat: 23.128994, lng: 113.253250},
+      //   Barcelona: { lat: 41.390205, lng: 2.154007},
+      // }
+      // ],
       markers: [],
       places: [],
       currentPlace: null
@@ -51,11 +66,9 @@ export default {
           lng: position.coords.longitude
         };
       });
-    }
+    },
   }
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

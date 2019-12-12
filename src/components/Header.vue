@@ -15,13 +15,13 @@
             Headquarters
           </div>
           <div class="d-flex flex-column flex-md-row">
-            <div class="d-flex flex-column">
+            <div class="d-flex flex-column header__text-left">
               <div class="header__text">
                 Global Message Services Ukraine LLC Bundesstrasse 5 | 3rd Floor<br>
                 6300 Zug <br>
                 Switzerland
               </div>
-              <a class="header__telephone justify-content-end" href="tel:+41 41 544 62 00">
+              <a class="header__telephone" href="tel:+41 41 544 62 00">
                 +41 41 544 62 00
               </a>
             </div>
@@ -62,74 +62,66 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-#header {
-  width: 100%;
-  margin-bottom: 50px;
-}
+<style lang="scss" scoped>
+  #header {
+    margin-bottom: 50px;
+    width: 100%;
+  }
+  .header__contacts {
+    color: #333333;
+    font-family: "Suisse Intl",sans-serif;
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 48px;
+    margin-bottom: 30px;
+    margin-top: 60px;
+  }
+  .header__text {
+    line-height: 30px;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+  .header__text-right {
+    line-height: 20px;
+    margin-left: 10px;
+    text-align: left;
+    width: 400px;
+  }
+  .header__subtitle {
+    color: #2e2e2e;
+    font-family: "Suisse Intl",sans-serif;
+    font-size: 34px;
+    font-weight: 300;
+    line-height: 48px;
+    margin-top: 20px;
+  }
+  .header__subtitle-green-text {
+    color: #3db565;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .header__telephone {
+    color: #3db565;
+    font-family: "Suisse Intl",sans-serif;
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 36px;
+    margin-bottom: 20px;
+    text-decoration: none;
+  }
+  .text-right__default {
+    color: #333333;
+    font-family: "Suisse Intl",sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+  }
+  .text-right__green {
+    color: #3db565;
+    font-family: "Suisse Intl - Semi Bold",sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.85px;
+    text-transform: uppercase;
+  }
 
-.header__contacts {
-  color: #333333;
-  font-family: "Suisse Intl", sans-serif;
-  font-size: 50px;
-  font-weight: 300;
-  line-height: 48px;
-  margin-top: 60px;
-  margin-bottom: 30px;
-}
-
-.header__text {
-  text-align: left;
-  margin-bottom: 40px;
-  line-height: 30px;
-}
-
-.header__text-right {
-  text-align: left;
-}
-
-.header__subtitle {
-  color: #2e2e2e;
-  margin-top: 20px;
-  font-family: "Suisse Intl", sans-serif;
-  font-size: 34px;
-  font-weight: 300;
-  line-height: 48px;
-}
-
-.header__subtitle-green-text {
-  color: #3db565;
-  margin-right: 5px;
-  margin-left: 5px;
-}
-
-.header__telephone {
-  font-family: "Suisse Intl", sans-serif;
-  font-size: 26px;
-  font-weight: 300;
-  line-height: 36px;
-  color: #3db565;
-  text-decoration: none;
-}
-
-.header__text-right {
-  line-height: 20px;
-  width: 400px;
-}
-
-.text-right__default {
-  color: #333333;
-  font-family: "Suisse Intl", sans-serif;
-  font-size: 15px;
-  font-weight: 300;
-}
-
-.text-right__green {
-  color: #3db565;
-  font-family: "Suisse Intl - Semi Bold", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.85px;
-}
 </style>
