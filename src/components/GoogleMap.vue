@@ -1,74 +1,54 @@
 <template>
-  <div>
-    <gmap-map
-      :center="center"
-      :zoom="12"
-      style="width: 100%; height: 100%"
-      :options="{styles: styles}"
-      map-type-id="terrain"
-    >
-      <gmap-marker
-        :key="index"
-        v-for="(m, index) in markers"
-        :position="m.position"
-        @click="center = m.position"
-      ></gmap-marker>
-    </gmap-map>
-  </div>
+  <GmapMap
+    :center="center[city]"
+    :zoom="12"
+    ref="mapRef"
+    map-type-id="terrain"
+    style="width: 100%; height: 450px"
+    :options="mapStyle"
+  >
+    <GmapMarker
+      :position="center[city]"
+      class="marker"
+      :clickable="true"
+      :draggable="true"
+      :icon="{ url: require('../assets/icon.png') }"
+      @click="center = marker.position"
+    />
+  </GmapMap>
 </template>
 
 <script>
-import json from "../assets/googleMapStyle";
+import style from "../assets/googleMapStyle";
 export default {
-  name: "GoogleMap",
+  props: {
+    city: String
+  },
   data() {
+    var mapStyle = style;
+    let center = {
+      Kyiv: { lat: 50.431782, lng: 30.516382 },
+      NewYork: { lat: 40.73061, lng: -73.935242 },
+      Guangzhou: { lat: 23.128994, lng: 113.25325 },
+      Barcelona: { lat: 41.390205, lng: 2.154007 }
+    };
+    let marker = {
+      position: { lat: center[this.city].lat, lng: center[this.city].lng }
+    };
     return {
-      styles: [json],
-      center: { lat: 50.45466, lng: 30.5238 },
-      // center: [{
-      //   Kyiv: {lat: 50.45466, lng: 30.5238},
-      //   NewYork: { lat: 40.730610, lng: -73.935242},
-      //   Guangzhou: { lat: 23.128994, lng: 113.253250},
-      //   Barcelona: { lat: 41.390205, lng: 2.154007},
-      // }
-      // ],
-      markers: [],
-      places: [],
-      currentPlace: null
+      center: center,
+      marker: marker,
+      mapStyle: { styles: mapStyle, disableDefaultUI: true }
     };
   },
-
-  mounted() {
-    this.geolocate();
-  },
-
-  methods: {
-    // receives a place object via the autocomplete component
-    setPlace(place) {
-      this.currentPlace = place;
-    },
-    addMarker() {
-      if (this.currentPlace) {
-        const marker = {
-          lat: this.currentPlace.geometry.location.lat(),
-          lng: this.currentPlace.geometry.location.lng()
-        };
-        this.markers.push({ position: marker });
-        this.places.push(this.currentPlace);
-        this.center = marker;
-        this.currentPlace = null;
-      }
-    },
-    geolocate: function() {
-      navigator.geolocation.getCurrentPosition(position => {
-        this.center = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-      });
-    },
-  }
 };
 </script>
 
-<style scoped></style>
+<style lang="scss">
+.marker {
+  border-radius: 50%;
+  background: #3db565;
+  width: 20px;
+  height: 20px;
+}
+</style>
